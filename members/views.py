@@ -42,14 +42,24 @@ def register_page(request):
             return render (request,'register_page.html', {'error':'Password does not match!'})
     else:
         return render(request,'register_page.html')
-
+        
+# def information_page(request):
+#     template = loader.get_template('information.html')
+#     return HttpResponse(template.render()) 
 def information_page(request):
-    template = loader.get_template('information.html')
-    return HttpResponse(template.render()) 
+    if request.method == "POST":
+        return redirect('sideeffect')      
+    else:
+        return render(request,'information.html')
 
+# def sideeffect_page(request):
+#     template = loader.get_template('sideeffect.html')
+#     return HttpResponse(template.render()) 
 def sideeffect_page(request):
-    template = loader.get_template('sideeffect.html')
-    return HttpResponse(template.render()) 
+    if request.method == "POST":
+        return redirect('success')      
+    else:
+        return render(request,'sideeffect.html')
 
 def success_page(request):
     template = loader.get_template('success.html')
