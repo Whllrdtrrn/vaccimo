@@ -24,11 +24,18 @@
               <div class="splash-container">
                 <!-- @include('system._components.notifications') -->
                 <div class="panel  ">
+ 
                   <div class="panel-heading  ">
+                  
                         <h1>Login</h1>
                   </div>
                   <div class="panel-body">
-                    <form action="" method="POST">
+                    {% if error %}
+                    {{ error }}
+                    {% endif %}
+                    <form action="{% url 'loginpage' %}" method="POST">
+                      {% csrf_token %}
+
                       <!-- {!!csrf_field()!!} -->
                       <div class="form-group">
                         <input style="font-size: 16px ;" id="username" name="username" type="text" placeholder="Username" autocomplete="off" class="form-control">
