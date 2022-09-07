@@ -1,13 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
 *{
+    box-sizing: border-box;
     margin: 0%;
     padding: 0%;
     list-style: none;
     text-decoration: none;
 }
 body{
-    box-sizing: border-box;
+    
     overflow-x:hidden;
     font-size: 20px;
     width:100% ;
@@ -85,6 +86,7 @@ header{
     box-sizing: border-box;
     border-radius: 5px;
   }
+ 
   #btnlogin:before{
     color: #fff;
     background: #0bb8c6;
