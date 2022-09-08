@@ -17,11 +17,14 @@ def login_page(request):
     
     if request.method == 'POST':
         user = auth.authenticate(username=request.POST['username']  ,password = request.POST['password'])
+
         if user is not None:
             auth.login(request,user)
-            return redirect('information')
+            return redirect('information') 
+     
         else:
             return render (request,'login_page.html', {'error':'Username or password is incorrect!'})
+        
     else:
         return render(request,'login_page.html')
 
@@ -64,4 +67,8 @@ def sideeffect_page(request):
 
 def success_page(request):
     template = loader.get_template('success.html')
+    return HttpResponse(template.render()) 
+
+def dashboard (request):
+    template = loader.get_template('system/dashboard.html')
     return HttpResponse(template.render()) 
