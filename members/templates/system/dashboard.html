@@ -13,100 +13,111 @@
     <title>Document</title>
 </head>
 <body>
-   <main>
       <header>
          <div class="navbar">
-            <div class="logo">Vaccimo</div>
-            <div class="logout-button"></div>
+            <div class="logo">Vaccimo :: <span style="font-size: 30px ;">admin</span></div>
+             <div class="dropdown">
+    
+                <a onclick="myFunction()"href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle dropbtn  "><img src="{%static 'images/profile.jpg' %}" alt=""width="40" height="40" class="rounded-circle"style="object-fit: cover;"><span class="user-name"></span></a> 
+               <div id="myDropdown" class="dropdown-content">
+                 <a href="">Sign Out</a>
+               
+               </div>
          </div>
       </header>
-      <section class="leftnav">
-         <div class="">
-         <ul>   
-            <li>
-               Dashboard
-            </li>
-            <li>
-               Dashboard
-            </li>
-            <li>
-               Dashboard
-            </li>
-            <li>
-               Dashboard
-            </li>
-            <li>
-               Dashboard
-            </li>
-            <li>
-               Dashboard
-            </li>
-         </ul>
-         </div>
-      </section>
-
-   <div class="topnav">
-      <h1>Dashboard</h1>
-   </div>
-   <div class="card-container">
-      <div class="card">
-          <h1>2</h1>
-      </div>
-      <div class="card">
-         <h1>2</h1>
-      </div>
-      <div class="card">
-         <h1>2</h1>
-      </div>
-   </div>
-   <div class="row "style="
-   top: 427px;
-   position: absolute;
-   margin-left: 263px;">
-      <div class="card w3-white">
-         <div class="panel-body">
-            <table class="table table-hover table-wrapper  text-center"style="text-transform: capitalize;padding-left:12px ">
-               <thead >
-                  <tr >
-                     <th >No.</th>
-                     <th style="text-align:left">full name</th>
-                     <th>age</th>
-                     <th>gender</th>
-                     <th>date/time</th>
-                  </tr>
-               </thead>
-               <tbody style="text-transform: capitalize;">
+         <main>
+               <section class="leftnav-container">
+                  <div class="leftnav">
+                     <div class="link-item warning">
+                        <a><i class="fa fa-fw fa-home"></i>Dashboard</a>
+                     </div>
+                     <div class="link-item ">
+                        <a><i class="fa fa-fw fa-home"></i>user management</a>
+                     </div>   
+                     <div class="link-item">
+                        <a><i class="fa fa-fw fa-home"></i>side effect</a>
+                     </div>      
                  
-                  <tr>
-                     <td class="cell-detail"> 
-                        <span>s</span>
-                     </td>
-                     <td class="cell-detail  text-left"> 
-                        <span>s</span>
-                     </td>
-                     <td class="cell-detail"> 
-                        <span>s</span>
-                     </td>
-                     <td class="cell-detail"> 
-                        <span>s</span>
-                     </td>
-                     <td class="cell-detail text-center"> 
-                        <span>s</span>
-                     </td>
-                  </tr>
-                  
-                 
-               </tbody>
-            </table>
-            <hr>
-            <div class="footer ">
-            <div class=" text-center">
-            </div>
-         </div>
-         </div>
-      </div>
-   </div>
-</main>
+                  </div>
+               </section>
+               <section class="middle-container">
+               <div class="title">
+                  <h1>Dashboard</h1>
+               </div>
+               <div class="card-container ">
+                  <div class="card bg-dark">
+                     <h1>2</h1>
+                  </div>
+                  <div class="card bg-primary">
+                     <h1>2</h1>
+                  </div>
+                  <div class="card bg-warning">
+                     <h1>2</h1>
+                  </div>
+               </div>
+                <div class="row ">
+                  <div class="card w3-white">
+                     <div class="panel-body">
+                        <table class="table table-hover table-wrapper  text-center"style="text-transform: capitalize;padding-left:12px ">
+                           <thead >
+                              <tr >
+                                 <th >No.</th>
+                                 <th style="text-align:left">full name</th>
+                                 <th>age</th>
+                                 <th>gender</th>
+                                 <th>date/time</th>
+                              </tr>
+                           </thead>
+                           <tbody style="text-transform: capitalize;">
+                           
+                              <tr>
+                                 <td class="cell-detail "> 
+                                    <span>s</span>
+                                 </td>
+                                 <td class="cell-detail  text-left"> 
+                                    <span>s</span>
+                                 </td>
+                                 <td class="cell-detail"> 
+                                    <span>s</span>
+                                 </td>
+                                 <td class="cell-detail"> 
+                                    <span>s</span>
+                                 </td>
+                                 <td class="cell-detail text-center"> 
+                                    <span>s</span>
+                                 </td>
+                              </tr>                                
+                           </tbody>
+                        </table>
+                        <hr>
+                        <div class="footer ">
+                        <div class=" text-center">
+                        </div>
+                     </div>
+                     </div>
+                  </div>
+               </div>
+               </section>       
+         </main>
+<script>
+   function myFunction() {
+     document.getElementById("myDropdown").classList.toggle("show");
+   }
+   
+   // Close the dropdown if the user clicks outside of it
+   window.onclick = function(event) {
+     if (!event.target.matches('img')) {
+       var dropdowns = document.getElementsByClassName("dropdown-content");
+       var i;
+       for (i = 0; i < dropdowns.length; i++) {
+         var openDropdown = dropdowns[i];
+         if (openDropdown.classList.contains('show')) {
+           openDropdown.classList.remove('show');
+         }
+       }
+     }
+   }
+   </script>
 </body>
 </html>
 
