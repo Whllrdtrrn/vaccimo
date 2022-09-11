@@ -13,22 +13,16 @@
     <title>Document</title>
 </head>
 <body>
-      <header>
-         <div class="navbar">
-            <div class="logo">Vaccimo :: <span style="font-size: 30px ;">admin</span></div>
-             <div class="dropdown">
-    
-                <a onclick="myFunction()"href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle dropbtn  "><img src="{%static 'images/profile.jpg' %}" alt=""width="40" height="40" class="rounded-circle"style="object-fit: cover;"><span class="user-name"></span></a> 
-               <div id="myDropdown" class="dropdown-content">
-                 <a href="">Sign Out</a>
-               
-               </div>
-         </div>
-      </header>
+      
          <main>
                <section class="leftnav-container">
+                
+                  <div class="adminlogo">
+                     <div class="circle"><img src="{%static 'images/w.jpg' %}" alt=""width="100" height="100" class="rounded-circle"style="object-fit: cover;"></div><h3>Admin</h3></div>
+
                   <div class="leftnav">
-                     <div class="link-item warning">
+                    
+                     <!-- <div class="link-item ">
                         <a><i class="fa fa-fw fa-home"></i>Dashboard</a>
                      </div>
                      <div class="link-item ">
@@ -36,22 +30,67 @@
                      </div>   
                      <div class="link-item">
                         <a><i class="fa fa-fw fa-home"></i>side effect</a>
-                     </div>      
-                 
+                     </div>       -->
+                     <ul>
+                        <li>
+                            <a href="#Dashboard" class="tab active"onclick="openCity(event, 'Dashboard')"id="defaultOpen">
+                                <span class="icon"><i class="fa fa-fw fa-home"></i></span>
+                                <span class="item">My Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="tab" onclick="openCity(event, 'Account')">
+                                <span class="icon"><i class="fa fa-fw fa-home"></i></span>
+                                <span class="item">User Account</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="tab"onclick="openCity(event, 'sideeffect')">
+                                <span class="icon"><i class="fa fa-fw fa-home"></i></span>
+                                <span class="item">Side effect</span>
+                            </a>
+                        </li>
+                        <li>
+                           <a href="#"class="tab"onclick="openCity(event, 'information')">
+                               <span class="icon"><i class="fa fa-fw fa-home"></i></span>
+                               <span class="item">Information</span>
+                           </a>
+                       </li>
+                        
+                    </ul>
                   </div>
                </section>
-               <section class="middle-container">
-               <div class="title">
-                  <h1>Dashboard</h1>
-               </div>
+             <!-- section dashboard -->
+
+               <section class="middle-container"id="Dashboard">
+                  <header>
+                     <div class="navbar">
+                        <div class="logo">Vaccimo : : <span style="font-size: 30px ;">Dashboard</span></div>
+                         <div class="dropdown">
+                
+                            <a onclick="myFunction()"href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle dropbtn  "><img src="{%static 'images/profile.jpg' %}" alt=""width="40" height="40" class="rounded-circle"style="object-fit: cover;"><span class="user-name"></span></a> 
+                           <div id="myDropdown" class="dropdown-content">
+                              <ul >
+                                 <li>
+                                   <div class="user-info " style="color: black;">
+                                     <div class="user-name">Morning, </div>
+                                     <div class="user-name">Sir!</div>
+                                   </div>
+                                 </li>
+                                 <li><a href="{% url 'loginpage' %}"class="logout"> Logout</a></li>
+                               </ul>
+                           
+                           </div>
+                     </div>
+                  </header>
                <div class="card-container ">
-                  <div class="card bg-dark">
+                  <div class="card bg-white">
                      <h1>2</h1>
                   </div>
-                  <div class="card bg-primary">
+                  <div class="card bg-white">
                      <h1>2</h1>
                   </div>
-                  <div class="card bg-warning">
+                  <div class="card bg-white">
                      <h1>2</h1>
                   </div>
                </div>
@@ -97,11 +136,216 @@
                      </div>
                   </div>
                </div>
-               </section>       
+               </section>  
+
+               <!-- section account -->
+
+               <section class="middle-container" id="Account">
+                  <header>
+                     <div class="navbar">
+                        <div class="logo">Vaccimo : : <span style="font-size: 30px ;">User Account</span></div>
+                         <div class="dropdown">
+                
+                            <a onclick="myFunction()"href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle dropbtn  "><img src="{%static 'images/profile.jpg' %}" alt=""width="40" height="40" class="rounded-circle"style="object-fit: cover;"><span class="user-name"></span></a> 
+                           <div id="myDropdown1" class="dropdown-content">
+                              <ul>
+                                 <li>
+                                   <div class="user-info " style="color: black;">
+                                     <div class="user-name">Morning, </div>
+                                     <div class="user-name">Sir!</div>
+                                   </div>
+                                 </li>
+                                 <li><a href="{% url 'loginpage' %}"class="logout"> Logout</a></li>
+                               </ul>
+                           
+                           </div>
+                     </div>
+                  </header>
+                  
+                   <div class="row ">
+                     <div class="card w3-white">
+                        <div class="panel-body">
+                           <table class="table table-hover table-wrapper  text-center"style="text-transform: capitalize;padding-left:12px ">
+                              <thead >
+                                 <tr >
+                                    <th >No.</th>
+                                    <th style="text-align:left">full name</th>
+                                    <th>age</th>
+                                    <th>gender</th>
+                                    <th>date/time</th>
+                                 </tr>
+                              </thead>
+                              <tbody style="text-transform: capitalize;">
+                              
+                                 <tr>
+                                    <td class="cell-detail "> 
+                                       <span>s</span>
+                                    </td>
+                                    <td class="cell-detail  text-left"> 
+                                       <span>s</span>
+                                    </td>
+                                    <td class="cell-detail"> 
+                                       <span>s</span>
+                                    </td>
+                                    <td class="cell-detail"> 
+                                       <span>s</span>
+                                    </td>
+                                    <td class="cell-detail text-center"> 
+                                       <span>s</span>
+                                    </td>
+                                 </tr>                                
+                              </tbody>
+                           </table>
+                           <hr>
+                           <div class="footer ">
+                           <div class=" text-center">
+                           </div>
+                        </div>
+                        </div>
+                     </div>
+                  </div>
+
+               </section>
+               <section class="middle-container" id="sideeffect">
+                  <header>
+                     <div class="navbar">
+                        <div class="logo">Vaccimo : : <span style="font-size: 30px ;">Side Effect</span></div>
+                         <div class="dropdown">
+                
+                            <a onclick="myFunction()"href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle dropbtn  "><img src="{%static 'images/profile.jpg' %}" alt=""width="40" height="40" class="rounded-circle"style="object-fit: cover;"><span class="user-name"></span></a> 
+                           <div id="myDropdown2" class="dropdown-content">
+                              <ul >
+                                 <li>
+                                   <div class="user-info " style="color: black;">
+                                     <div class="user-name">Morning, </div>
+                                     <div class="user-name">{{name}}!</div>
+                                   </div>
+                                 </li>
+                                 <li><a href="{% url 'logout_user' %}"class="logout"> Logout</a></li>
+                               </ul>
+                           </div>
+                     </div>
+                  </header>
+                  
+                   <div class="row ">
+                     <div class="card w3-white">
+                        <div class="panel-body">
+                           <table class="table table-hover table-wrapper  text-center"style="text-transform: capitalize;padding-left:12px ">
+                              <thead >
+                                 <tr >
+                                    <th >No.</th>
+                                    <th style="text-align:left">full name</th>
+                                    <th>age</th>
+                                    <th>gender</th>
+                                    <th>date/time</th>
+                                 </tr>
+                              </thead>
+                              <tbody style="text-transform: capitalize;">
+                              
+                                 <tr>
+                                    <td class="cell-detail "> 
+                                       <span>s</span>
+                                    </td>
+                                    <td class="cell-detail  text-left"> 
+                                       <span>s</span>
+                                    </td>
+                                    <td class="cell-detail"> 
+                                       <span>s</span>
+                                    </td>
+                                    <td class="cell-detail"> 
+                                       <span>s</span>
+                                    </td>
+                                    <td class="cell-detail text-center"> 
+                                       <span>s</span>
+                                    </td>
+                                 </tr>                                
+                              </tbody>
+                           </table>
+                           <hr>
+                           <div class="footer ">
+                           <div class=" text-center">
+                           </div>
+                        </div>
+                        </div>
+                     </div>
+                  </div>
+
+               </section>
+               <section class="middle-container" id="information">
+                  <header>
+                     <div class="navbar">
+                        <div class="logo">Vaccimo : : <span style="font-size: 30px ;">Information</span></div>
+                         <div class="dropdown">
+                
+                            <a onclick="myFunction()"href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle dropbtn  "><img src="{%static 'images/profile.jpg' %}" alt=""width="40" height="40" class="rounded-circle"style="object-fit: cover;"><span class="user-name"></span></a> 
+                           <div id="myDropdown3" class="dropdown-content">
+                              <ul >
+                                 <li>
+                                   <div class="user-info " style="color: black;">
+                                     <div class="user-name">Morning, </div>
+                                     <div class="user-name">Sir!</div>
+                                   </div>
+                                 </li>
+                                 <li><a href="{% url 'loginpage' %}"class="logout"> Logout</a></li>
+                               </ul>
+                           
+                           </div>
+                     </div>
+                  </header>
+                  
+                   <div class="row ">
+                     <div class="card w3-white">
+                        <div class="panel-body">
+                           <table class="table table-hover table-wrapper  text-center"style="text-transform: capitalize;padding-left:12px ">
+                              <thead >
+                                 <tr >
+                                    <th >No.</th>
+                                    <th style="text-align:left">full name</th>
+                                    <th>age</th>
+                                    <th>gender</th>
+                                    <th>date/time</th>
+                                 </tr>
+                              </thead>
+                              <tbody style="text-transform: capitalize;">
+                              
+                                 <tr>
+                                    <td class="cell-detail "> 
+                                       <span>s</span>
+                                    </td>
+                                    <td class="cell-detail  text-left"> 
+                                       <span>s</span>
+                                    </td>
+                                    <td class="cell-detail"> 
+                                       <span>s</span>
+                                    </td>
+                                    <td class="cell-detail"> 
+                                       <span>s</span>
+                                    </td>
+                                    <td class="cell-detail text-center"> 
+                                       <span>s</span>
+                                    </td>
+                                 </tr>                                
+                              </tbody>
+                           </table>
+                           <hr>
+                           <div class="footer ">
+                           <div class=" text-center">
+                           </div>
+                        </div>
+                        </div>
+                     </div>
+                  </div>
+
+               </section>
+     
          </main>
 <script>
    function myFunction() {
      document.getElementById("myDropdown").classList.toggle("show");
+     document.getElementById("myDropdown1").classList.toggle("show");
+     document.getElementById("myDropdown2").classList.toggle("show");
+     document.getElementById("myDropdown3").classList.toggle("show");
+
    }
    
    // Close the dropdown if the user clicks outside of it
@@ -117,6 +361,22 @@
        }
      }
    }
+   
+   function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("middle-container");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tab");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+
    </script>
 </body>
 </html>

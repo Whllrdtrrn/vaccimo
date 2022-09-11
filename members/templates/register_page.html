@@ -14,7 +14,7 @@
         <title>Document</title>
     </head>
     <body>
-        <img id="bg-main" src="{% static 'images/t.jpg' %}" alt="Cover Image" style="position: absolute; height: 100%; width: 100%;" />
+        <img id="bg-main" src="{% static 'images/login.jpg' %}" alt="Cover Image" style="position: absolute; height: 100%; width: 100%;" />
         <div class="register">
             <div class="be-wrapper be-login">
                 <div class="be-content">
@@ -26,31 +26,43 @@
                                     <h1>Create Account</h1>
                                 </div>
                                 <div class="panel-body">
+                                    <div class="form-group">
+                                        {% for message in messages %}
+                                        <div class="alert alert-danger" role="alert">
+                                            {{message}}
+                                        </div>
+                                        {% endfor %}
+                                    </div>
                                     <form action="{% url 'register' %}" method="POST">
-                                        {% if error %} {{ error }} {% endif %}
+                        
                                         <!-- {!!csrf_field()!!} -->
                                         {% csrf_token %}
 
                                         <div class="form-group">
-                                            <input style="font-size: 16px;" id="username" name="username" type="text" placeholder="Username" autocomplete="off" class="form-control" />
+                                            <input style="font-size: 16px;" id="email" name="email" type="text" placeholder="Email" autocomplete="off" class="form-control" required/>
+                                            <span class="help-block"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input style="font-size: 16px;" id="username" name="username" type="text" placeholder="Username" autocomplete="off" class="form-control" required/>
                                             <span class="help-block"></span>
                                         </div>
 
                                         <div class="form-group">
-                                            <input style="font-size: 16px;" id="password" name="password" type="password" placeholder="Password" class="form-control" />
+                                            <input style="font-size: 16px;" id="password" name="password" type="password" placeholder="Password" class="form-control"required />
 
                                             <span class="help-block"></span>
                                         </div>
                                         <div class="form-group">
-                                            <input style="font-size: 16px;" id="password_confirmation" name="password_confirmation" type="password" placeholder="Verify Password" class="form-control" />
+                                            <input style="font-size: 16px;" id="password_confirmation" name="password_confirmation" type="password" placeholder="Verify Password" class="form-control" required/>
                                             <span class="help-block"></span>
                                         </div>
 
-                                        <div class="form-group login-submit">
-                                            <button style="font-size: 20px; width: 87%; margin-left: 27px;" data-dismiss="modal" type="submit" class="btn btn-primary btn-xl">Register Account</button>
+                                        <div class="form-group login-submit mt-4">
+                                            <button style="font-size: 20px; " data-dismiss="modal" type="submit" class="btn btn-primary btn-xl">Register</button>
                                         </div>
-                                        <div class="col-xs-12 text-center" style="font-size: 14px; margin-bottom: 20px;">Do you have an account? <a href="{% url 'loginpage' %}">Sign in</a></div>
+                                        <div class="col-xs-12 text-center mt-3" style="font-size: 14px; margin-bottom: 20px;">Do you have an account? <a href="{% url 'loginpage' %}">Sign in</a></div>
                                     </form>
+                                  
                                 </div>
                             </div>
                         </div>

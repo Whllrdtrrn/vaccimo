@@ -171,6 +171,7 @@ header{
     transition: 0.5s;
     cursor:point;
     font-size: 15px;
+    
 font-weight: bold;
 }
 .btn-service:hover{
@@ -234,4 +235,6 @@ font-size: 2.5rem;
 padding-bottom: 26px;
 color:white;
 }
+
+  
 
